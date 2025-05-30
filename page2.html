@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Special Message</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Comic Sans MS', cursive;
+      background: linear-gradient(135deg, #f8cdda, #1d2b64);
+      overflow: hidden;
+      position: relative;
+      color: #fff;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    /* Floating hearts */
+    .heart {
+      position: absolute;
+      font-size: 24px;
+      color: #ff6b81;
+      animation: float 6s linear infinite;
+      opacity: 0.8;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) scale(0.5);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) scale(1.2);
+        opacity: 0;
+      }
+    }
+
+    .bubble-box {
+      background: rgba(255, 105, 180, 0.85);
+      border-radius: 30px;
+      padding: 40px 60px;
+      box-shadow: 0 0 30px 5px #ff69b4cc;
+      max-width: 80%;
+      text-align: center;
+      position: relative;
+      z-index: 10;
+    }
+
+    .bubble-box p {
+      font-size: 28px;
+      line-height: 1.5;
+      margin: 0 0 25px;
+      font-weight: bold;
+      text-shadow: 1px 1px 5px #900030;
+    }
+
+    .bubble-box p .emoji {
+      font-size: 32px;
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+
+    button {
+      padding: 12px 25px;
+      background-color: #ff4d6d;
+      border: none;
+      color: white;
+      font-size: 20px;
+      border-radius: 15px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      font-weight: bold;
+      box-shadow: 0 4px 10px #ff4d6daa;
+    }
+
+    button:hover {
+      background-color: #e6004c;
+      box-shadow: 0 6px 15px #e6004ccc;
+    }
+  </style>
+</head>
+<body>
+  <!-- Music (auto play on page load) -->
+  <audio id="music" autoplay loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg" />
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Floating hearts created by JS -->
+  <script>
+    for (let i = 0; i < 30; i++) {
+      let heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerText = "❤️";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (5 + Math.random() * 5) + "s";
+      heart.style.fontSize = (20 + Math.random() * 20) + "px";
+      document.body.appendChild(heart);
+    }
+  </script>
+
+  <div class="bubble-box">
+    <p>Yar, ma ny jb sy apko dekha hai mera dil ap py e ruk gaya hai <span class="emoji">😍❤️</span></p>
+    <button onclick="location.href='page3.html'">Click Here</button>
+  </div>
+</body>
+</html>

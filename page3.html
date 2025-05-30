@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Friendship Message</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background: url('file:///C:/Users/Hpc/Desktop/ALL%20DESKTOP%20DATA/ROMANTIC/images/debby-hudson-jcc8sxK2Adw-unsplash.jpg') no-repeat center center fixed;
+    background-size: 120%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #5a1a01;
+  }
+
+  /* Floating hearts */
+  .heart {
+    position: absolute;
+    color: #ff4d6d;
+    font-size: 24px;
+    animation: float 7s linear infinite;
+    opacity: 0.8;
+    user-select: none;
+    pointer-events: none;
+  }
+
+  @keyframes float {
+    0% {
+      transform: translateY(100vh) scale(0.5);
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-10vh) scale(1.2);
+      opacity: 0;
+    }
+  }
+
+  .bubble-box {
+    background: rgba(255, 240, 220, 0.9);
+    padding: 40px 60px;
+    border-radius: 30px;
+    box-shadow: 0 0 20px #f4976c;
+    max-width: 80%;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+  }
+
+  .bubble-box p {
+    font-size: 22px;
+    line-height: 1.5;
+  }
+
+  .bubble-box p .emoji {
+    font-size: 26px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+
+  button {
+    margin-top: 25px;
+    padding: 12px 30px;
+    font-size: 20px;
+    border: none;
+    background-color: #ff4d6d;
+    color: white;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+    box-shadow: 0 4px 10px #ff4d6d88;
+  }
+
+  button:hover {
+    background-color: #e6004c;
+    box-shadow: 0 6px 15px #e6004ccc;
+  }
+</style>
+</head>
+<body>
+
+<!-- Romantic music, but no autoplay due to browser rules -->
+<audio id="romanticMusic" loop>
+  <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg" />
+  Your browser does not support the audio element.
+</audio>
+
+<script>
+  // Create 30 floating hearts randomly positioned and timed
+  for (let i = 0; i < 30; i++) {
+    const heart = document.createElement('div');
+    heart.className = 'heart';
+    heart.innerText = '❤️';
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.animationDuration = (5 + Math.random() * 5) + 's';
+    heart.style.fontSize = (20 + Math.random() * 20) + 'px';
+    document.body.appendChild(heart);
+  }
+
+  // Play music on first click anywhere (to allow sound)
+  function playMusicOnce() {
+    const music = document.getElementById('romanticMusic');
+    music.play();
+    document.removeEventListener('click', playMusicOnce);
+  }
+  document.addEventListener('click', playMusicOnce);
+</script>
+
+<div class="bubble-box">
+  <p>
+    Mujhe ye cute si larki achi lagti hai <span class="emoji">😊💕</span><br />
+    Apka dressing sense itna kamal ka hai. kabhi samajh nahi aata...<br />
+    Dress Ap py cute lag raha hai ya Ap us dress ma <span class="emoji">👗😍</span><br />
+    & smile... wo b kafi cute hai... <span class="emoji">🤝💖</span>
+  </p>
+  <button onclick="location.href='page4.html'">Click Here</button>
+</div>
+
+</body>
+</html>

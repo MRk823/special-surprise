@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Romantic Page for Arieha</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background: url('file:///C:/Users/Hpc/Desktop/ALL%20DESKTOP%20DATA/ROMANTIC/images/couple-5003157_1920.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #121111;
+            overflow: hidden;
+        }
+        .content {
+            text-align: center;
+            z-index: 2;
+        }
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        p {
+            font-size: 1.5rem;
+            margin-top: 20px;
+            color: #121111;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .bubble {
+            position: absolute;
+            bottom: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.5rem;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            animation: bubbleEffect 6s ease-in-out;
+            z-index: 1;
+        }
+        .music {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+        }
+        @keyframes floatHearts {
+            0% {
+                transform: translateY(0) scale(1);
+            }
+            50% {
+                transform: translateY(-200px) scale(1.2);
+            }
+            100% {
+                transform: translateY(0) scale(1);
+            }
+        }
+        @keyframes bubbleEffect {
+            0% { opacity: 0; bottom: 20%; }
+            50% { opacity: 1; bottom: 30%; }
+            100% { opacity: 0; bottom: 20%; }
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>Arieha 💖</h1>
+    </div>
+
+    <!-- Floating Hearts -->
+    <div class="heart">💖</div>
+    <div class="heart">💖</div>
+    <div class="heart">💖</div>
+    <div class="heart">💖</div>
+    <!-- Bubble Message -->
+    <div class="bubble">
+       <strong> Ma nahi jaanta meri life abhi kaisi hai.. But ye zaroor janta hu, Ky agar us ma ye cute c friend aa jaye to life waqai khoobsurat ho jaye gi... will you be my friend? 😊💖
+</strong>
+    </div>
+
+    <!-- Background Music -->
+    <audio class="music" controls autoplay loop>
+        <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+</body>
+</html>
